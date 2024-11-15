@@ -1,5 +1,7 @@
 
-
+html{
+  scroll-behavior: smooth;
+}
 body{
     background-color: black;
     overflow: hidden; /* Menyembunyikan scroll pada halaman */
@@ -15,7 +17,7 @@ body{
 /* Style untuk tombol musik */
 .music-controls {
     position: fixed;
-    padding-top: 110px;
+    padding-top: 60px;
     z-index: 1000;
     
 }
@@ -37,6 +39,11 @@ body{
 .play-btn, .pause-btn{
     width: 40px;
 }
+.waktu{
+  font-size: 16px;
+  font-family: "Edu AU VIC WA NT Pre", cursive;
+  text-shadow: 2px 2px 4px black;
+}
 
 section {
     height: 100vh; /* Membuat setiap section memenuhi seluruh tinggi viewport */
@@ -56,6 +63,12 @@ section {
   .nama-tamu, .gretings{
     font-size: 22px;
     font-family: "Edu AU VIC WA NT Pre", cursive;
+  }
+  .jdwl_text{
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+    position: relative;
   }
   
   .btn{
@@ -79,6 +92,10 @@ section {
     overflow: hidden;
     z-index: 1;
   }
+  .countdown_{
+    z-index: 1000;
+    position: relative;
+  }
   
   .linniel_1::after {
     content: '';
@@ -96,6 +113,8 @@ section {
     height: 100vh;
     background-size: contain;
     background-position: center;
+    display: flex;
+    flex-direction: column;
     transition: background-image 1s ease-in-out; /* Efek transisi saat berganti gambar */
     overflow: hidden;
     z-index: 1;
@@ -117,7 +136,7 @@ section {
     z-index: 100;
     position: absolute;
     pointer-events: none;
-    filter: drop-shadow(2px 2px 4px #43dcf783);
+    filter: drop-shadow(2px 2px 4px #00000083);
   }
   .content_1{
     z-index: 110;
@@ -148,9 +167,9 @@ section {
   .content_2{
     color: white;
     z-index: 120;
-    align-items: center;
-    justify-content: space-between;
+    padding: 20px;
   }
+
   .title{
     font-size: 36px;
     font-family: "Hurricane", cursive;
@@ -161,13 +180,16 @@ section {
   .jadwal{
     width: 280px;
     filter: drop-shadow(2px 2px 4px #000000);
+    margin-top: -10%;
   }
   .lokasi{
-    width: 70px;
+    width: 50px;
   }
   .lok-{
     font-size: 12px;
     white-space: nowrap;
+  }
+  .jadwal_1 {
   }
 
 

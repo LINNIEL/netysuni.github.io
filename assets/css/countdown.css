@@ -1,0 +1,154 @@
+
+.countdown_ {
+    margin: 0 auto;   /* Memusatkan elemen di layar */
+    width: 80%;
+    border-radius: 20px;
+}
+
+.flip-clock {
+    text-align: center;
+    perspective: 400px; /* Perspektif 3D untuk elemen flip. Nilai bisa diubah untuk efek 3D */
+    margin: 20px auto;
+}
+  
+.flip-clock *,
+.flip-clock *:before,
+.flip-clock *:after {
+    box-sizing: border-box; /* Menjamin ukuran elemen tidak melebihi batasnya */
+}
+  
+.flip-clock__piece {
+    display: inline-block;
+    margin: 0 5px; /* Jarak antar bagian flip clock (sesuaikan jika ingin jarak lebih lebar atau lebih sempit) */
+}
+  
+.flip-clock__slot {
+    font-size: 12px; /* Ukuran font berdasarkan lebar layar (vw), bisa diganti dengan nilai tetap seperti 'px' */
+    color: white;
+}
+  
+.card {
+    display: block;
+    position: relative;
+    padding-bottom: 0.72em;
+    font-size: 8vw; /* Ukuran font card, mengubah angka akan mengubah ukuran teks (contoh: lebih besar atau lebih kecil) */
+    line-height: 0.95; /* Spasi antara garis teks (ubah nilai untuk jarak vertikal yang berbeda) */
+}
+  
+.card__top,
+.card__bottom,
+.card__back::before,
+.card__back::after {
+    display: block;
+    border: solid 1px #ffffff;
+    height: 0.82em; /* Tinggi bagian atas, bawah, dan belakang card */
+    color: #ffffff; /* Warna teks pada bagian card, bisa diubah menjadi warna lain seperti #000 atau #FFF */
+    background: #000000; /* Warna latar belakang card, sesuaikan dengan tema (misalnya: #000 untuk hitam, #FFF untuk putih) */
+    padding: 0.25em;
+    border-radius: 0.15em 0.15em 0 0; /* Radius sudut atas card */
+    backface-visibility: hidden; /* Agar sisi belakang tidak terlihat saat flip */
+    transform-style: preserve-3d;
+    width: 1.8em; /* Lebar card, bisa diperbesar atau diperkecil sesuai kebutuhan */
+}
+  
+.card__bottom {
+    color: #ffffff; /* Warna teks bagian bawah card, bisa diganti dengan warna lain seperti #000 */
+    position: absolute;
+    top: 50%;
+    left: 0;
+    border-top: solid 1px #e9e9e9; /* Warna garis border atas bagian bawah card */
+    background: #000000; /* Warna latar belakang bagian bawah card */
+    border-radius: 0 0 0.15em 0.15em;
+    pointer-events: none;
+    overflow: hidden;
+}
+  
+.card__bottom::after {
+    display: block;
+    margin-top: -0.72em;
+}
+  
+.card__back::before,
+.card__bottom::after {
+    content: attr(data-value); /* Konten yang ditampilkan dalam card berdasarkan nilai data */
+}
+  
+.card__back {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    left: 0%;
+    pointer-events: none;
+}
+  
+.card__back::before {
+    position: relative;
+    z-index: -1;
+    overflow: hidden;
+}
+  
+.flip .card__back::before {
+    animation: flipTop 0.3s cubic-bezier(0.37, 0.01, 0.94, 0.35); /* Waktu dan efek animasi flip bagian atas */
+    animation-fill-mode: both;
+    transform-origin: center bottom; /* Titik awal animasi flip pada bagian bawah */
+}
+  
+.flip .card__back .card__bottom {
+    transform-origin: center top;
+    animation-fill-mode: both;
+    animation: flipBottom 0.6s cubic-bezier(0.15, 0.45, 0.28, 1); /* Waktu dan efek animasi flip bagian bawah */
+}
+
+/* Gaya untuk layar kecil */
+.card {
+    font-size: 40px; /* Ukuran font yang sesuai untuk layar kecil */
+}
+
+/* Media query untuk layar besar */
+@media (min-width: 768px) {
+    .card {
+        font-size: 40px; /* Ukuran font lebih kecil untuk layar besar */
+    }
+}
+@media (min-width: 320px) {
+    .card {
+        font-size: 28px; /* Ukuran font lebih kecil untuk layar besar */
+    }
+    .countdown_ {
+        margin: 0 auto;   /* Memusatkan elemen di layar */
+        width: 90%;
+        border-radius: 20px;
+    }
+}
+  
+@keyframes flipTop {
+    0% {
+        transform: rotateX(0deg);
+        z-index: 2;
+    }
+    0%,
+    99% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotateX(-90deg);
+        opacity: 0;
+    }
+}
+  
+@keyframes flipBottom {
+    0%,
+    50% {
+        z-index: -1;
+        transform: rotateX(90deg);
+        opacity: 0;
+    }
+    51% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        transform: rotateX(0deg);
+        z-index: 5;
+    }
+}
