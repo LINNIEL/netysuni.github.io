@@ -73,7 +73,7 @@ section {
     position: relative;
     width: 100%;
     height: 100vh;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     transition: background-image 1s ease-in-out; /* Efek transisi saat berganti gambar */
     overflow: hidden;
@@ -94,7 +94,7 @@ section {
     position: relative;
     width: 100%;
     height: 100vh;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     transition: background-image 1s ease-in-out; /* Efek transisi saat berganti gambar */
     overflow: hidden;
@@ -113,7 +113,7 @@ section {
   }
   .frame{
     width: 100%;
-    height: 100vh;
+    height: 100%;
     z-index: 100;
     position: absolute;
     pointer-events: none;
@@ -122,24 +122,27 @@ section {
   .content_1{
     z-index: 110;
     color: white;
+    justify-content: center;
+    align-items: center;
   }
   .nama{
     width: 320px;
-    filter: drop-shadow(2px 2px 4px #43dcf783);
+    filter: drop-shadow(2px 2px 4px #000000f1);
   }
   .kutipan{
+    padding-top: 45%;
     align-items: center;
     justify-content: center;
     position: relative;
     margin-left: 5%;
-    width: 80%;
+    width: 90%;
     font-size: 14px;
-    padding-top: 40%;
     font-family: "Edu AU VIC WA NT Pre", cursive;
     text-shadow: 2px 2px 4px black;
   }
   .kutipan span{
     font-size: 16px;
+    padding-top: 80%;
   }
 
   .content_2{
@@ -157,7 +160,7 @@ section {
   }
   .jadwal{
     width: 280px;
-    filter: drop-shadow(2px 2px 4px #43dcf783);
+    filter: drop-shadow(2px 2px 4px #000000);
   }
   .lokasi{
     width: 70px;

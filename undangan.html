@@ -19,13 +19,14 @@
         <link href="https://fonts.googleapis.com/css2?family=Hurricane&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="assets/css/navbar.css">
     </head>
 
     <body>
         <div class="mobile-container">
-            <audio id="background-music" src="assets/music/musikk.mp3" preload="auto" loop></audio>
+            <audio id="background-music" src="assets/music/s" preload="auto" loop></audio>
                 <div class="music-controls">
                     <button id="play-btn" style="display: none;">
                         <img src="assets/image/play.png" alt="play-btn" class="play-btn">
@@ -52,21 +53,21 @@
                 </ul>
             </div>
             <section id="linniel_1">
-                <div class="linniel_1 justify-content-center align-items-start d-flex position-relative">
-                    <img src="assets/image/frame.png" alt="frame" class="frame">
+                <div class="linniel_1 d-flex position-relative">
+                    <img src="assets/image/frame_2.png" alt="frame" class="frame" data-aos="zoom-in" data-aos-duration="2000">
                 <div class="content_1 text-center">
-                    <p class="title text-center pt-5 mt-3">Graduation Celebration</p>
-                    <p class="kutipan text-center">"Apapun juga yang kamu perbuat, 
-                        perbuatlah dengan segenap hatimu seperti
-                         untuk Tuhan dan bukan untuk manusia."<br><span>Kolose 3:23</span></p>
-                    <img src="assets/image/nama_2.png" alt="nama" class="nama">
+                    <p class="title text-center pt-5 mt-2" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="2000">Graduation Celebration</p>
+                        <p class="kutipan text-center" data-aos="fade-up" data-aos-delay="2000" data-aos-duration="2000">"Apapun juga yang kamu perbuat, 
+                            perbuatlah dengan segenap hatimu seperti
+                             untuk Tuhan dan bukan untuk manusia."<br><span>Kolose 3:23</span></p>
+                        <img src="assets/image/nama_2.png" alt="nama" class="nama" data-aos="fade-up" data-aos-delay="3000" data-aos-duration="2000">
                 </div>
                 </div>
             </section>
 
             <section id="linniel_2">
                 <div class="linniel_2 justify-content-center align-items-center d-flex position-relative">
-                    <img src="assets/image/frame.png" alt="frame" class="frame">
+                    <img src="assets/image/frame_2.png" alt="frame" class="frame" data-aos="zoom-in" data-aos-duration="3000">
                     <div class="content_2 text-light">
                         <div class="jadwal_1 text-center">
                             <p class="title">"Graduation Ceremony"</p>
@@ -103,6 +104,10 @@
         <script src="assets/js/navbar.js"></script>
         <script src="assets/js/script.js"></script>
         <script src="assets/js/music.js"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init();
+        </script>
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
             integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
